@@ -83,9 +83,7 @@ public class SanityTest {
 		myTest = extent.startTest(method.getName());
 		myTest.log(LogStatus.INFO, "Starting test", "Start test");
 	}
-	
-
-	
+		
 	/*  Prerequisite: getting into https://www.10bis.co.il/
 	 * 		Given: Client click connection and  
 	 * 		When: give Facebook login details and click login

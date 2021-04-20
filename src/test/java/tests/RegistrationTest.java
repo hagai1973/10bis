@@ -101,10 +101,10 @@ public class RegistrationTest {
 	/*  Prerequisite: getting into https://10bis.co.il, click Registration button
 	 * 		Given: client is in registration page
 	 * 		When: fill registration details
-	 *  	Then: details are being saved
+	 *  	Then: details are being typed
 	 */
 	
-	@Test(priority = 2, enabled = true, description = "verify registration page")
+	@Test(dependsOnMethods = { "goToRegister" },  enabled = true, description = "verify insert details in registration page")
 	public void fillRegistrationDetails() throws InterruptedException, IOException {
 		logger.info("Begin to fill registration");
 		Assert.assertTrue(registration.fill_registration(fullName, mail, phone));

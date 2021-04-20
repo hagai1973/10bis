@@ -15,9 +15,11 @@ public class Registration extends Base {
 
 		
 		driver.findElement(By.id("fullName")).sendKeys(fullName);
+		driver.findElement(By.id("email")).sendKeys(email);
+		driver.findElement(By.id("cellPhone")).sendKeys(phone);
 		
 		
-		if (isExist(By.id("modal-title")))
+		if ((driver.findElement(By.id("fullName")).getAttribute("value").equals(fullName))&&(driver.findElement(By.id("cellPhone")).getAttribute("value").equals(phone)))
 			return true;
 		else
 			return false;

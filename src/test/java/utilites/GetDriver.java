@@ -72,14 +72,14 @@ public class GetDriver {
 
 					if (browser.toLowerCase().equals("chrome")) {
 						// Set the location of the Google Chrome driver exe file by set the system
-						
-						ChromeOptions options = new ChromeOptions();
-						options.addArguments("user-data-dir=C:/Users/"+user+"/AppData/Local/Google/Chrome/User Data");
-						
-						
 						System.setProperty("webdriver.chrome.driver", "C:\\jars\\chrome\\chromedriver.exe");
+
+						ChromeOptions options = new ChromeOptions();
+						options.addArguments("user-data-dir=C:/Users/"+user+"/AppData/Local/Google/Chrome/User Data2");
 						
 						driver = new ChromeDriver(options);
+						
+						
 					} else if (browser.toLowerCase().equals("firefox")) {
 						// Set system property
 						System.setProperty("webdriver.gecko.driver", "C:\\jars\\firefox\\geckodriver.exe");
