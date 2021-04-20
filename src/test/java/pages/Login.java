@@ -3,7 +3,9 @@ package pages;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.xml.LaunchSuite.ExistingSuite;
 
 public class Login extends Base {
@@ -55,6 +57,24 @@ public class Login extends Base {
 		else
 			return false;
 
+	}
+	
+	public boolean verifyErrMsg() throws InterruptedException {
+		click(By.xpath("//button[@data-test='login-submit']"));
+		
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ENTER).build().perform();
+		
+		
+		
+		Thread.sleep(1000);
+		
+		String err = driver.findElement(By.xpath("//div[@role='alert']")).getText();
+		
+		if (err.equals("שדה חובה"))
+			return true;
+		else
+			return false;
 	}
 
 }

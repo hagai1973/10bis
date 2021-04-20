@@ -66,7 +66,7 @@ public class GetDriver {
 
 		}
 		
-		// Method for getting WebDriver with get baseURL 
+		// Method for getting WebDriver with get baseURL + user data 
 				public static WebDriver getDriver(String browser, String baseUrl, String user) {
 					WebDriver driver = null;
 
@@ -75,7 +75,11 @@ public class GetDriver {
 						System.setProperty("webdriver.chrome.driver", "C:\\jars\\chrome\\chromedriver.exe");
 
 						ChromeOptions options = new ChromeOptions();
-						options.addArguments("user-data-dir=C:/Users/"+user+"/AppData/Local/Google/Chrome/User Data2");
+						
+						if (user.toLowerCase().equals("incognito"))
+							options.addArguments("--incognito");
+						else
+							options.addArguments("user-data-dir=C:/Users/"+user+"/AppData/Local/Google/Chrome/User Data2");
 						
 						driver = new ChromeDriver(options);
 						
@@ -102,6 +106,7 @@ public class GetDriver {
 					return driver;
 
 				}
+				
 				
 		
 	
