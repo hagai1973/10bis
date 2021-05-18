@@ -123,7 +123,8 @@ public class SanityTest {
 		myTest.log(LogStatus.INFO, "Finish test", "Finish test ");
 		extent.endTest(myTest);
 	
-		//return to base URL 
+		//return to base URL
+		//test comment
 		//driver.get(baseUrl);
 	}
 
