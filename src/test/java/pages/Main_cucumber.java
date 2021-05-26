@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.xml.LaunchSuite.ExistingSuite;
 
-public class Main extends Base {
+public class Main_cucumber extends Base {
 
-	public Main(WebDriver driver) {
+	public Main_cucumber(WebDriver driver) {
 		super(driver);
 	}
 

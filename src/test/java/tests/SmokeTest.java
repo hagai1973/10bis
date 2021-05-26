@@ -1,4 +1,4 @@
-package features;
+package tests;
 
 import org.testng.annotations.Test;
 import org.xml.sax.SAXException;
@@ -11,6 +11,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.Login;
+import pages.Login_cucumber;
 import pages.Main;
 import utilites.GetDriver;
 import utilites.Utilities;
@@ -45,7 +46,7 @@ public class SmokeTest {
 
 	//pages
 	private Main main;
-	private Login login;
+	private Login_cucumber login;
 	
 	private static final Logger logger = LogManager.getLogger(SmokeTest.class);
 	private static String userName;
@@ -75,7 +76,7 @@ public class SmokeTest {
 		//driver = GetDriver.getDriver(browser, baseUrl, user);
 		
 		main = new Main(driver);
-		login = new Login(driver);
+		login = new Login_cucumber(driver);
 
 	}
 
@@ -112,7 +113,7 @@ public class SmokeTest {
 	@Test(priority = 2, enabled = true, description = "Login 10bis using Facebook")
 	public void LoginUsingFacebook_2() throws InterruptedException, IOException, ParserConfigurationException, SAXException {
 
-		login = new Login(driver);
+		login = new Login_cucumber(driver);
 
 		logger.info("Going to login with facebook detailse");
 		Assert.assertTrue(login.doLoginFacebook("", "", "חגי"), "could not login with Facebook account, check logs");
@@ -125,7 +126,7 @@ public class SmokeTest {
 	@Test(priority = 3, enabled = true, description = "Login 10bis using Facebook")
 	public void LoginUsingFacebook_3() throws InterruptedException, IOException, ParserConfigurationException, SAXException {
 
-		login = new Login(driver);
+		login = new Login_cucumber(driver);
 
 		logger.info("Going to verify login");
 		Assert.assertTrue(login.verifyLoginFacebook("חגי"), "could not login with Facebook account, check logs");
